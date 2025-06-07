@@ -32,7 +32,7 @@ Działająca aplikacja uruchomiona lokalnie:
 1. Sklonuj repozytorium:
    ```bash
    git clone https://github.com/xaqexa/symulacja-swiatel.git
-    cd symulacja-swiatel
+      cd symulacja-swiatel
    ```
 2. Zainstaluj zależności:
    ```bash
@@ -127,9 +127,9 @@ Testy jednostkowe (Jest) pokrywają kluczowe przypadki:
 ![img1.png](pictures%2Fimg1.png)
 
 Uruchom testy:
-```bash
-npm test
-```
+   ```bash
+   npm test
+   ```
 
 
 
