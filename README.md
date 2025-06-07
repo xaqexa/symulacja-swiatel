@@ -13,6 +13,9 @@ System zawiera zarówno backendową logikę symulacji, jak i interaktywną wizua
 - **Zastosowanie algorytmów inteligentnego sterowania** światłami, eliminujących zbędne opóźnienia.
 - **Wizualizacja w czasie rzeczywistym** oraz monitoring kluczowych metryk.
 
+## DEMO
+Działająca aplikacja uruchomiona lokalnie:
+![img.png](img.png)
 
 
 ## Zastosowane technologie
@@ -22,13 +25,49 @@ System zawiera zarówno backendową logikę symulacji, jak i interaktywną wizua
 - **HTML5 + CSS3** –   interfejs użytkownika.
 - **Node.js + Express** – serwer do lokalnego uruchamiania aplikacji webowej.
 - **Jest** – testy jednostkowe pod kątem logiki.
+- **Docker** - konteneryzacja aplikacji.
+
+## Uruchomienie lokalnie
+### Instrukcja
+1. Sklonuj repozytorium:
+   ```bash
+   git clone https://github.com/xaqexa/symulacja-swiatel.git
+    cd symulacja-swiatel
+   ```
+2. Zainstaluj zależności:
+   ```bash
+   npm install
+   ```
+3.Uruchom serwer
+```bash
+   npm start
+   ```
+4. Otwórz aplikację w przeglądarce: [http://localhost:3000](http://localhost:3000)
+   
+## Uruchomienie w kontenerze Docker
+
+### Pliki:
+- **Dockerfile** – definiuje środowisko Node.js, instaluje zależności i uruchamia serwer Express na porcie 3000.
+- **.dockerignore** – wyklucza z obrazu zbędne pliki (np. node_modules, .git, logi).
+
+### Instrukcja
+
+1. Zbuduj obraz Dockera:
+   ```bash
+   docker build -t symulacjav2 .
+   ```
+2. Uruchom kontener:
+   ```bash
+   docker run -p 3000:3000 symulacjav2
+   ```
+3. Otwórz aplikację w przeglądarce: [http://localhost:3000](http://localhost:3000)
 
 
 
 ## Architektura projektu
 
 ```
-symulacjav2/
+symulacjav-swiatel/
 │
 ├── src/
 │   ├── models/
@@ -46,8 +85,6 @@ symulacjav2/
 └── tests/
     └── Intersection.test.ts  # Testy jednostkowe
 ```
-
-
 
 ## Opis algorytmu
 
@@ -80,29 +117,6 @@ W systemie zaimplementowano kompleksowy monitoring:
 - Wyniki prezentowane są w panelu pod GUI.
 
 
-
-## Konteneryzacja (Docker)
-
-Aplikacja może być uruchomiona w kontenerze Dockerze.
-
-### Pliki:
-- **Dockerfile** – definiuje środowisko Node.js, instaluje zależności i uruchamia serwer Express na porcie 3000.
-- **.dockerignore** – wyklucza z obrazu zbędne pliki (np. node_modules, .git, logi).
-
-### Instrukcja
-
-1. Zbuduj obraz Dockera:
-   ```bash
-   docker build -t symulacjav2 .
-   ```
-2. Uruchom kontener:
-   ```bash
-   docker run -p 3000:3000 symulacjav2
-   ```
-3. Otwórz aplikację w przeglądarce: [http://localhost:3000](http://localhost:3000)
-
-
-
 ## Testowanie
 Testy jednostkowe (Jest) pokrywają kluczowe przypadki:
 - Dodawanie pojazdów do kolejek.
@@ -120,7 +134,6 @@ npm test
 
 
 ## Przykłady działania
-![img.png](img.png)
 
 - **Dodanie pojazdów:**  
   Kliknij odpowiedni przycisk, pojazd pojawi się na drodze.
