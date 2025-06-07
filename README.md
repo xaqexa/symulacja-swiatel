@@ -39,7 +39,7 @@ Działająca aplikacja uruchomiona lokalnie:
    npm install
    ```
 3.Uruchom serwer
-```bash
+   ```bash
    npm start
    ```
 4. Otwórz aplikację w przeglądarce: [http://localhost:3000](http://localhost:3000)
